@@ -1,0 +1,289 @@
+{% load static %}
+<html xmlns="http://www.w3.org/1999/html">
+	<head>
+		<title>Home</title>
+		<meta name="viewport" content="width=device-width ,initial-scale=1.0">
+		<style>
+			.div1{
+				margin-top:10px;
+				width:95%;
+				height:20%;
+				
+			}
+			
+			.div1 ul{
+				margin-top:20px;
+				list-style:none;
+			}
+			.div1 ul li{
+				float:right;
+				margin-top:20px;
+				margin-left:20px;
+			}
+			.div1 ul li a{
+				text-decoration:none;
+				font-size:20px;
+				color:#000080 ;
+			}
+			.div1 ul li a:hover{
+				color:olive;
+				text-decoration:underline;
+			}
+			.div22{
+				height:100%;
+				background-image:url({% static '1336125.jpg' %});
+				background-size:cover;
+				width:100%
+			}
+			.div2 h2{
+				margin-left:25px;
+				font-size:50px;
+			}
+			.div2 h3{
+				margin-left:80px;
+			}
+			.div3{
+				
+				margin:auto;
+				height:100px;
+				width:90%;
+			}
+			.div3 h2{
+				margin-left:540px;
+				text-decoration:underline;
+			}
+			.div3 ul {
+				list-style:none;
+				float:left;
+				margin-left:150px;
+				margin-top:10px;
+				width:80%;
+				border:2px solid black;
+				border-radius:20px;
+				background-color:#ADD8E6;
+			}
+			.div3 ul li{
+				margin-top:20px
+			}
+			.div3 img{
+				width:100px;
+				height:100px;
+				margin-top:5px;
+				margin-right:40px;
+				border-radius:50px;
+				
+			}
+			.div3 ul button{
+				float:center;
+				margin-top:10px;
+				margin-bottom:5px;
+				background-color:#87CEEB;
+				
+			}
+			.div4{
+			margin-top:400px;
+				width:100%;
+				height:40%;
+				background-color:#87CEFA;
+			}
+			.div4 ul{
+			margin-left:50px;
+				margin-top:30px;
+				list-style:none;
+				float:left;
+			}
+			.div4 ul li{
+					margin-top:10px;
+			
+			}
+			.div4 ul li a{
+				text-decoration:none;
+				color:black;
+			}
+			.div4 ul li a:hover{
+				box-shadow:2px 8px 16px 8px rgba(0,0,0,0.2);
+			}
+			.sed{
+				padding:5px;
+			}
+			@media only screen and (min-width: 600px){
+				.div11{
+					display:none;
+				}
+			}
+			@media only screen and (max-width: 600px){
+				.div1{
+					display:none;
+				}
+				.div11{
+					margin-top:20px;
+					display:block;
+					margin-bottom:20px;
+				}
+				.div22{
+					margin-top:10px;
+					height:50%;
+				}
+				.div2{
+					margin-top:20px;
+				}
+				.div11 ul{
+					list-style:none;
+				}
+				.div11 ul li{
+					float:left;
+					margin-left:10px;
+				}
+				.div11 ul li a{
+					text-decoration:none;
+					font-size:15px;
+				}
+				.div1 ul li{
+				float:right;
+				margin-top:20px;
+				
+			}
+				.div1 ul li a{
+				text-decoration:none;
+				font-size:12px;
+				color:#000080 ;
+			}
+			.div22{
+				width:80%;
+			}
+			.div3 h2{
+				margin-left:30px;
+			}
+			.div3 ul {
+				list-style:none;
+				float:left;
+				margin-left:20px;
+				margin-right:0px;
+				border:2px solid black;
+				border-radius:20px;
+				background-color:#ADD8E6;
+			}
+			.div4{
+			margin-top:1250px;
+				width:80%;
+				height:130%;
+				background-color:#87CEFA;	
+			}
+			.div4 ul {
+				margin-left:20px;
+			}
+			
+			}
+			.div41{
+				margin-left:320px;
+				margin-bottom:-30px;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="div22">
+		<div class="div1">
+			<ul>
+				<li><a href="owner">admin</a></li>
+				<li><a onclick="b()">Contact Us</a><li/>
+				<li><a onclick="a()">About Us</a><li/>
+				<li><a href="product">Products</a><li/>
+				<li><a href="register" >Register</a><li/>
+				<li><a href="login" >Login</a><li/>
+				
+			</ul>
+		</div>
+		<div class="div11">
+			<ul>
+				<li><a href="#">Home</a><li/>
+				<li><a href="register.html">Register</a><li/>
+				<li><a href="login.html">Login</a><li/>
+				<li><a href="#">Contact Us</a><li/>
+			</ul>
+		</div>
+		<div class="div2">
+			<h2>Welcome to ECart</h2>
+		</div>
+	</div>	
+		<div class="div3">
+			<div class="w">
+				<h2><b>About Us</b></h2>
+				<ul class="c1">
+					<li>Speak to your customers. </li>
+					<li class="sed">On this website’s main page you will find everything lifestyle-related – fashion, food, education</li>
+					<li class="sed">we introduces you to the team that makes this website an endless source of inspiration</li>
+				</ul>
+			</div>
+		<div class="s">
+			<h2><b>Contact Us</b></h2>
+				<ul>
+					<div class="div41">
+						<form action="SendQuery" method="post">
+							{% csrf_token %}
+
+							</br>
+							<input type="text" name="name" placeholder="Enter your name" required/></br></br>
+							<input type="mail" name="email" placeholder="Enter your Email" required/></br></br>
+							<input type="number" name="number" placeholder="Enter your contact number" required/></br></br>
+							<input type="text" name="message" placeholder="Enter your query"/></br></br>
+							<input type="submit" id="sub"/>
+						</form>
+						</br>
+						</br>
+					</div>
+				</ul>
+		</div>
+		</div>		
+		<div class="div4">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="login">Login</a></li>
+					<li><a href="register">Register</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+				<ul>
+					<li><b><underline>Address:</underline></b></li>
+					<li>&nbsp;2/4,sky towers</li>
+					<li>&nbsp;Hyderabad</li>
+					<li>&nbsp;India</li>
+				</ul>
+				<ul>
+					<li><b><underline>Benefits:</underline></b></li>
+					<li>&nbsp;Excellent Teaching</li>
+					<li>&nbsp;Best Instructors</li>
+					<li>&nbsp;Doubt Clarification</li>
+				</ul>
+				<ul>
+					<li><b><underline>What will you gain ?</underline></b></li>
+					<li>&nbsp;Certificate</li>
+					<li>&nbsp;Lifelong Access to the course</li>
+					<li>&nbsp;Best price</li>
+				</ul>
+				<ul>
+					<li><b><underline>Process:</underline></b></li>
+					<li>&nbsp;-Pay</li>
+					<li>&nbsp;-Acess the course</li>
+					<li>&nbsp;-Start Learning</li>
+				</ul>
+				<ul>
+					<li><b></b></li><br/>
+					<li></li>
+					<li><b> Happy Learning !</b></li>
+					<li></li>
+					<li></li>
+				</ul>
+				
+		</div>
+		
+	</body>
+	<script>
+		function a() {
+                var elem = document.getElementById("w");
+                elem.scrollIntoView(false);
+            }
+        function b() {
+                var elem = document.getElementById("s");
+                elem.scrollIntoView(false);
+            }
+	</script>
+</html>

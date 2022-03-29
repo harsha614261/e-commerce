@@ -1,0 +1,91 @@
+{% load static %}
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+            .div3{
+                margin-left:400px;
+                border:2px solid black;
+                border-radius:25px;
+                margin-right:300px;
+			}
+			.div3 ul{
+			    margin-left:150px;
+			}
+			.div3 h1{
+			    margin-left:270px;
+			    text-decoration:underline;
+			}
+			.div4,.div5{
+			    margin-left:400px;
+                border:2px solid black;
+                border-radius:25px;
+                margin-right:300px;
+			}
+			.div5 form{
+			    margin-left:230px;
+			}
+			.div4 h1{
+			    margin-left:260px;
+			    text-decoration:underline;
+			}
+			.div5 h1{
+			    margin-left:230px;
+			    text-decoration:underline;
+			}
+			.div4 ul{
+			    margin-left:200px;
+
+			}
+			.div4 ul li{
+			    list-style-type:none;
+			}
+			.div3 ul li{
+			    list-style-type:none;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="div3">
+            <h1>Products</h1>
+			{% for t in products_details %}
+				<ul>
+					<li><img src="{{t.img.url}}"/></li>
+					<li>Course Name:{{t.Cname}}</li>
+					<li>Instructor:{{t.CInstructor}}</li>
+					<li>Course Duration:{{t.Cduration}}</li>
+					<li>Course Topics:{{t.Ctopics}}</li>
+					<li>Accessibility:{{t.Accessibility}}</li>
+					<li>Cost:{{t.Cost}}</li>
+					<li>pid:{{t.id}}&nbsp;&nbsp;&nbsp;</li>
+					<br/>
+				</ul>
+			{% endfor %}
+		</div>
+		<div class="div4">
+			<h1>Total orders</h1>
+			{% for tea in show_orders %}
+				<ul>
+					<li>User Name:{{tea.uname}}</li>
+					<li>email:{{tea.mail}}</li>
+					<li>pid:{{tea.pid}}</li>
+					<li>status:{{tea.status}}&nbsp;&nbsp;&nbsp;</li>
+					<br/>
+				</ul>
+			{% endfor %}
+		</div>
+		<div class="div5">
+            <h1>Status Update</h1>
+			<form action="owner" method="post">
+                {% csrf_token %}
+				<input type="text" name='uname' placeholder='Enter username' required/></br>
+				<input type="mail" name='mail' placeholder="Enter the mail" required/></br>
+				<input type="number" name="pid" placeholder='Enter Productid' required/></br>
+				<input type="text" name="status" placeholder="Enter status of the order"/></br>
+				<input type="submit"/></br>
+			</form>
+		</div>
+	</body>
+</html>

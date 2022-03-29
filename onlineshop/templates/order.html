@@ -1,0 +1,71 @@
+{% load static %}
+<html xmlns="http://www.w3.org/1999/html">
+	<head>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			.div2{
+				background-color:teal;
+				margin-left:10px;
+				width:98%;
+				border-radius:25px;
+				height:40px;
+			}
+			.div2 h2{
+				margin-top:10px;
+				margin-left:550px;
+				padding:5px;
+			}
+			.div3{
+
+				margin:auto;
+				height:100px;
+				background-color:'black';
+
+			}
+			.div3 h2{
+				margin-left:580px;
+				text-decoration:underline;
+			}
+			.div3 ul {
+				list-style:none;
+				float:left;
+				margin-left:150px;
+				margin-right:50px;
+				border:2px solid black;
+				border-radius:20px;
+				background-color:#ADD8E6;
+				overflow:auto;
+			}
+			.div3 img{
+				width:100px;
+				height:100px;
+				margin-top:5px;
+				margin-right:40px;
+				border-radius:50px;
+				margin-left:15px;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div2">
+			<h2>My Orders</h2>
+		</div>
+		<div class="div3">
+			{% for t in x %}
+				<ul>
+					<li><img src="{{t.0.img.url}}"/></li>
+					<li>Course Name:{{t.0.Cname}}</li>
+					<li>Instructor:{{t.0.CInstructor}}</li>
+					<li>Course Duration:{{t.0.Cduration}}</li>
+					<li>Course Topics:{{t.0.Ctopics}}</li>
+					<li>Accessibility:{{t.0.Accessibility}}</li>
+					<li>Cost:{{t.0.Cost}}</li>
+					<li>Status:{{t.1}}&nbsp;&nbsp;&nbsp;</li>
+					<br/>
+				</ul>
+			{% endfor %}
+		</div>
+	</body>
+</html>	

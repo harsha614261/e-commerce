@@ -1,0 +1,50 @@
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body{
+				background-image:url("5098228.png");
+				background-size:cover;
+
+			}
+			.div1{
+				margin:auto;
+				border:2px solid black;
+				border-radius:20px;
+				margin-left:200px;
+				margin-top:50px;
+				width:60%;
+			}
+			.div1 h1{
+				margin-left:360px;
+			}
+			.div1 h3{
+				margin-left:290px;
+			}
+			.div1 img{
+				margin-left:275px;
+				border:2px solid black ;
+				border-radius:20px;
+
+			}
+			button{
+				margin-left:380px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<h1><b>{{getdata.Cname}}</b></h1>
+			<img src="{{getdata.img.url}}"></img>
+			<h3>Course Name:{{getdata.Cname}} </h3>
+			<h3>Course Instructor:{{getdata.CInstructor}}</h3>
+			<h3>Course Duration:{{getdata.Cduration}}</h3>
+			<h3>Course Topics:{{getdata.Ctopics}}</h3>
+			<h3>Accessibility:{{getdata.Accessibility}}</h3>
+			<h3>Price:{{getdata.Cost}}/-</h3>
+			<a href="{% url 'BuyNow' getdata.id %}"><button value="Buynow">BuyNow</button> </a>
+		</div>
+	</body>
+</html>

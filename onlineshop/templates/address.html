@@ -1,0 +1,60 @@
+{% load static %}
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+	  xmlns="http://www.w3.org/1999/html">
+	<head>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			.div1{
+				margin:auto;
+				border:2px solid black;
+				border-radius:20px;
+				margin-left:200px;
+				margin-top:50px;
+				width:60%;
+				background-color:gray;
+			}
+			.div1 h1{
+				margin-left:360px;
+			}
+			.div1 h3{
+				margin-left:290px;
+			}
+			.div11{
+				margin-left:300px;
+				margin-top:30px;
+				margin-bottom:30px;
+			}
+
+		</style>
+	</head>
+	<body>
+	<form action="{{x.notes.key2}}" method="POST">
+		{% csrf_token %}
+		<div class="div1">
+			<div class="div11">
+				<b>UserName:{{x.notes.key5}}</b><br/>
+				<b>Email:{{x.notes.key6}}</b><br/>
+				<b>Course Name:{{x.notes.key2}}</b></br>
+				<b>Cost:{{x.amount}}</b></br>
+				<b>Instructor:{{x.notes.key1}}</b></br>
+				<b>Receipt_id:{{x.notes.key3}}</b></br>
+			</div>
+		</div>
+		<script    src="https://checkout.razorpay.com/v1/checkout.js"
+				   data-key="rzp_test_TYhQ1HZvFCtOrJ"
+				   data-amount={{x.notes.cost}}
+				   data-currency="INR"
+				   data-order_id=""
+				   data-buttontext="Pay with Razorpay"
+				   data-name="ECart"
+				   data-description={{x.notes.key2}}
+				   data-image="{{x.notes.key4}}"
+				   data-prefill.name="{{x.notes.key5}}"
+				   data-prefill.email="{{x.notes.key6}}"
+				   data-theme.color="teal">
+		</script>
+		<input type="hidden" custom="Hidden Element" name="hidden">
+	</form>
+	</body>
+</html>	

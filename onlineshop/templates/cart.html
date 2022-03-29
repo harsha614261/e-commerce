@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+	<head>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			.div2{
+				background-color:teal;
+				margin-left:10px;
+				width:98%;
+				border-radius:25px;
+				height:40px;
+			}
+			.div2 h2{
+				margin-top:10px;
+				margin-left:550px;
+				padding:5px;
+			}
+			.div3{
+				margin:auto;
+				height:100px;
+				background-color:'black';
+			}
+			.div3 h2{
+				margin-left:580px;
+				text-decoration:underline;
+			}
+			.div3 ul {
+				list-style:none;
+				float:left;
+				margin-left:150px;
+				margin-right:50px;
+				border:2px solid black;
+				border-radius:20px;
+				background-color:#ADD8E6;
+			}
+			.div3 img{
+				width:100px;
+				height:100px;
+				margin-top:5px;
+				margin-right:40px;
+				border-radius:50px;
+
+			}
+			.div3 ul button{
+				float:center;
+				margin-top:10px;
+				margin-bottom:5px;
+				background-color:#87CEEB;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div2">
+			<h2>My Cart</h2>
+		</div>
+		<div class="div3">
+			{% for t in uploads %}
+			<ul class="c1">
+				<li><img src="{{t.img.url}}"></img></li>
+				<li class="sed"><a href="{% url 'GetDetails' t.uid %}"><button value="Get Details">GetDetails</button> </a> </li>
+				<li class="sed"><a href="{% url 'BuyNow' t.uid %}"><button value="Buynow">BuyNow</button> </a> </li>
+			</ul>
+			{% endfor %}
+		</div>
+	</body>
+</html>	
